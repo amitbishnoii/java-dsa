@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class LeetCode_1920 {
     public static void main(String[] args) {
         int[] nums = { 5, 0, 1, 2, 3, 4 };
