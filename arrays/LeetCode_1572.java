@@ -5,6 +5,11 @@ public class LeetCode_1572 {
                 { 1, 1, 1, 1 },
                 { 1, 1, 1, 1 }
         };
+        sum_mat(mat);
+
+    }
+
+    static void sum_mat(int[][] mat) {
         int sum = 0;
         for (int row = 0; row < mat.length; row++) {
             for (int col = 0; col < mat[row].length; col++) {
