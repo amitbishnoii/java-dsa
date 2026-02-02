@@ -2,16 +2,21 @@ public class CeilingNumber {
     public static void main(String[] args) {
         int[] arr = { 12, 14, 16, 18, 20 };
 
-        int target = 16;
+        int target = 17;
 
+        System.out.println(ceilingNumber(arr, target));
+
+    }
+
+    static int ceilingNumber(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
-
+        int ceil = 0;
         while (start <= end) {
             int mid = (start + end) / 2;
             if (arr[mid] == target) {
-                System.out.println("index is: " + mid + " and number is: " + arr[mid]);
-                break;
+                ceil = arr[mid];
+                return arr[mid];
             } else if (arr[mid] < target) {
                 start = mid + 1;
             } else {
@@ -19,8 +24,10 @@ public class CeilingNumber {
             }
 
             if (start > end) {
-                System.out.println("ceiling index is: " + start + " and number is: " + arr[start]);
+                ceil = arr[start];
+                return arr[start];
             }
         }
+        return ceil;
     }
 }
