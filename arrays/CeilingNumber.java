@@ -1,11 +1,9 @@
 public class CeilingNumber {
     public static void main(String[] args) {
         int[] arr = { 12, 14, 16, 18, 20 };
-
         int target = 17;
 
         System.out.println(ceilingNumber(arr, target));
-
     }
 
     static int ceilingNumber(int[] arr, int target) {
