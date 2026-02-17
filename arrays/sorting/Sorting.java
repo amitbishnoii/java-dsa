@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 public class Sorting {
     public static void main(String[] args) {
-        int[] arr = { 3, 5, 4, 1, 2 };
-        System.out.println(Arrays.toString(bubble_sort(arr)));
+        int[] arr = { 3, 4, 1, 2, 5 };
+        // System.out.println(Arrays.toString(bubble_sort(arr)));
+        // System.out.println(Arrays.toString(selection_sort(arr)));
+        System.out.println(Arrays.toString(selection_sort(arr)));
     }
 
     static int[] bubble_sort(int[] arr) {
@@ -20,4 +22,25 @@ public class Sorting {
         }
         return arr;
     }
- }
+
+    static int[] selection_sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int last = arr.length - i - 1;
+            int largest_index = greatest_index(arr, 0, last);
+            int temp = arr[largest_index];
+            arr[largest_index] = arr[last];
+            arr[last] = temp;
+        }
+        return arr;
+    }
+
+    static int greatest_index(int[] arr, int start, int end) {
+        int greatest = start;
+        for (int j = start; j <= end; j++) {
+            if (arr[j] > arr[greatest]) {
+                greatest = j;
+            }
+        }
+        return greatest;
+    }
+}
