@@ -13,9 +13,13 @@ public class CyclicSort {
     }
 
     static int[] cycle_sort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != i + 1) {
-                swap(arr, i, arr[i] - 1);
+        int i = 0;
+        while (i < arr.length) {
+            int correct = arr[i] - 1;
+            if (arr[i] != arr[correct]) {
+                swap(arr, i, correct);
+            } else {
+                i++;
             }
         }
 
