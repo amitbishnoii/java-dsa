@@ -2,19 +2,23 @@ import java.util.Arrays;
 
 public class Sorting {
     public static void main(String[] args) {
-        int[] arr = { 3, 4, 1, 2, 5 };
+        int[] arr = { 5, 4, 3, 2, 1 };
         // System.out.println(Arrays.toString(bubble_sort(arr)));
         // System.out.println(Arrays.toString(selection_sort(arr)));
         System.out.println(Arrays.toString(insertion_sort(arr)));
+    }
+
+    static void swap(int[] arr, int ind1, int ind2) {
+        int temp = arr[ind1];
+        arr[ind1] = arr[ind2];
+        arr[ind2] = temp;
     }
 
     static int[] bubble_sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length - i; j++) {
                 if (arr[j] < arr[j - 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
+                    swap(arr, j, j - 1);
                 }
             }
         }
@@ -25,9 +29,7 @@ public class Sorting {
         for (int i = 0; i < arr.length; i++) {
             int last = arr.length - i - 1;
             int largest_index = greatest_index(arr, 0, last);
-            int temp = arr[largest_index];
-            arr[largest_index] = arr[last];
-            arr[last] = temp;
+            swap(arr, largest_index, last);
         }
         return arr;
     }
@@ -45,11 +47,9 @@ public class Sorting {
     static int[] insertion_sort(int[] arr) {
         for (int i = 0; i <= arr.length - 2; i++) {
             for (int j = i + 1; j > 0; j--) {
-                if (arr[j] < arr[j-1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                } else if (arr[j] > arr[j-1]) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                } else if (arr[j] > arr[j - 1]) {
                     break;
                 }
             }
