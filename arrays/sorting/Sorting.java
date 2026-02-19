@@ -1,5 +1,3 @@
-package sorting;
-
 import java.util.Arrays;
 
 public class Sorting {
@@ -7,7 +5,7 @@ public class Sorting {
         int[] arr = { 3, 4, 1, 2, 5 };
         // System.out.println(Arrays.toString(bubble_sort(arr)));
         // System.out.println(Arrays.toString(selection_sort(arr)));
-        System.out.println(Arrays.toString(selection_sort(arr)));
+        System.out.println(Arrays.toString(insertion_sort(arr)));
     }
 
     static int[] bubble_sort(int[] arr) {
@@ -42,5 +40,20 @@ public class Sorting {
             }
         }
         return greatest;
+    }
+
+    static int[] insertion_sort(int[] arr) {
+        for (int i = 0; i <= arr.length - 2; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (arr[j] < arr[j-1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                } else if (arr[j] > arr[j-1]) {
+                    break;
+                }
+            }
+        }
+        return arr;
     }
 }
