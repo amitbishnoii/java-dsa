@@ -11,8 +11,6 @@ public class Palindrome {
             rev = (rev * 10) + temp;
             x = x / 10;
         }
-        System.out.println(rev);
-        System.out.println(x);
         return rev == a;
     }
 }
