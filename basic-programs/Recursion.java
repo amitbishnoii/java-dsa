@@ -5,7 +5,7 @@ public class Recursion {
         System.out.println("enter n: ");
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        printName(n);
+        sum(n, 0);
     }
 
     static void printName(int n) {
@@ -15,7 +15,11 @@ public class Recursion {
         printName(n);
     }
 
-    static void sum(int n) {
-
+    static void sum(int n, int sum) {
+        if (n < 1) {
+            System.out.println(sum);
+            return;
+        }
+        sum(n - 1, sum + n);
     }
 }
