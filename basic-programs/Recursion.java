@@ -8,8 +8,9 @@ public class Recursion {
         // sum(n, 0);
         // System.out.println(sum_functional(n));
         // System.out.println(factorial(n));
-        int[] arr = { 1, 2, 3, 4, 5 };
-        System.out.println(Arrays.toString(reverseArray(arr, 0, arr.length - 1)));
+        // int[] arr = { 1, 2, 3, 4, 5 };
+        // System.out.println(Arrays.toString(reverseArray(arr, 0, arr.length - 1)));
+        System.out.println(fib(2));
     }
 
     static void printName(int n) {
@@ -61,5 +62,14 @@ public class Recursion {
         } else {
             return false;
         }
+    }
+
+    static int fib(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        }
+        return fib(n - 1) + fib(n - 2);
     }
 }
