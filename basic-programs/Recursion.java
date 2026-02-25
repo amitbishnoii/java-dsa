@@ -5,7 +5,8 @@ public class Recursion {
         System.out.println("enter n: ");
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        sum(n, 0);
+        // sum(n, 0);
+        System.out.println(sum_functional(n));
     }
 
     static void printName(int n) {
@@ -21,5 +22,12 @@ public class Recursion {
             return;
         }
         sum(n - 1, sum + n);
+    }
+
+    static int sum_functional(int n) {
+        if (n < 1) {
+            return 0;
+        }
+        return n + sum_functional(n - 1);
     }
 }
