@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -66,7 +67,21 @@ public class StreamsDemo {
         // System.out.println(bol3);
 
         // 10. findFirst, findAny
-        Optional<Integer> op = stds2.stream().findFirst();
-        op.ifPresent(System.out::println);
+        // Optional<Integer> op = stds2.stream().findFirst();
+        // Optional<Integer> op1 = stds2.stream().findAny();
+        // op1.ifPresent(System.out::println);
+
+        // List<String> names = List.of("anna", "bob", "charlie", "ram");
+        // System.out.println(names.stream().filter(x -> x.length() > 3).collect(Collectors.toList()));
+
+        // List<Integer> ints = List.of(5, 2, 6, 1);
+        // System.out.println(ints.stream().map(x -> x * x).sorted((a, b) -> b - a).collect(Collectors.toList()));
+
+        // List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        // System.out.println(nums.stream().reduce((a,b) -> a + b).get());
+
+        String name = "hello world";
+        System.out.println(name.chars().filter(x -> x == 'l').count());
+
     }
 }
