@@ -72,16 +72,37 @@ public class StreamsDemo {
         // op1.ifPresent(System.out::println);
 
         // List<String> names = List.of("anna", "bob", "charlie", "ram");
-        // System.out.println(names.stream().filter(x -> x.length() > 3).collect(Collectors.toList()));
+        // System.out.println(names.stream().filter(x -> x.length() >
+        // 3).collect(Collectors.toList()));
 
         // List<Integer> ints = List.of(5, 2, 6, 1);
-        // System.out.println(ints.stream().map(x -> x * x).sorted((a, b) -> b - a).collect(Collectors.toList()));
+        // System.out.println(ints.stream().map(x -> x * x).sorted((a, b) -> b -
+        // a).collect(Collectors.toList()));
 
         // List<Integer> nums = List.of(1, 2, 3, 4, 5);
         // System.out.println(nums.stream().reduce((a,b) -> a + b).get());
 
-        String name = "hello world";
-        System.out.println(name.chars().filter(x -> x == 'l').count());
+        // 11. flatmap
 
+        List<List<String>> list = Arrays.asList(
+                Arrays.asList("a", "b"),
+                Arrays.asList("c", "d"),
+                Arrays.asList("e", "f"));
+
+        // System.out.println(list.stream().flatMap(x -> x.stream()).map(x ->
+        // x.toUpperCase()).toList());
+
+        List<String> ls = Arrays.asList(
+                "Hello world",
+                "asdfasdf",
+                "qwerqwer");
+
+        // System.out.println(ls.stream().flatMap(x -> Arrays.stream(x.split("
+        // "))).map(x -> x.toUpperCase()).toList());
+        // ls.stream().forEach(System.out::println);
+
+        List<Integer> listofInts = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+        // listofInts.parallelStream().forEach(x -> System.out.println(x));
+        listofInts.parallelStream().forEachOrdered(x -> System.out.println(x));
     }
 }
