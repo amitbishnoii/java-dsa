@@ -10,7 +10,6 @@ public class LeetCode_977 {
     }
 
     static int[] sortedSquares(int[] nums) {
-        int n = nums.length;
         List<Integer> neg = new ArrayList<>();
         List<Integer> pos = new ArrayList<>();
 
