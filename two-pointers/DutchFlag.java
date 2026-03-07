@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class DutchFlag {
@@ -12,7 +11,7 @@ public class DutchFlag {
         int mid = 0;
         int high = nums.length - 1;
 
-        for (int i = 0; i < nums.length; i++) {
+        while(mid < high) {
             if (nums[mid] == 0) {
                 swap(nums, mid, low);
                 low++;
