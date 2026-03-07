@@ -1,9 +1,36 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class DutchFlag {
     public static void main(String[] args) {
         int[] nums = { 2, 0, 2, 1, 1, 0 };
-        sortColors(nums);
+        sortColors_tp(nums);
+    }
+
+    static void sortColors_tp(int[] nums) {
+        int low = 0;
+        int mid = 0;
+        int high = nums.length - 1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[mid] == 0) {
+                swap(nums, mid, low);
+                low++;
+                mid++;
+            } else if (nums[mid] == 1) {
+                mid++;
+            } else if (nums[mid] == 2) {
+                swap(nums, mid, high);
+                high--;
+            }
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+    static void swap(int[] arr, int i1, int i2) {
+        int temp = arr[i1];
+        arr[i1] = arr[i2];
+        arr[i2] = temp;
     }
 
     static void sortColors(int[] nums) {
