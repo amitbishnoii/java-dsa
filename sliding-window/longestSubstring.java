@@ -12,7 +12,7 @@ public class longestSubstring {
     static int longestKSubstr(String s, int k) {
         HashMap<Character, Integer> charMap = new HashMap<>();
         int low = 0;
-        int result = 0;
+        int result = -1;
         for (int high = 0; high < s.length(); high++) {
             charMap.put(s.charAt(high), charMap.getOrDefault(s.charAt(high), 0) + 1);
             while (charMap.size() > k) {
