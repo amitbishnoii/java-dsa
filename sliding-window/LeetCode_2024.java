@@ -1,4 +1,5 @@
 public class LeetCode_2024 {
+
     public static void main(String[] args) {
         String answerKey = "TTFF";
         int k = 2;
