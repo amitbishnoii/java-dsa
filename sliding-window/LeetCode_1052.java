@@ -23,7 +23,7 @@ public class LeetCode_1052 {
                 low++;
                 len = (high - low) + 1;
             }
-                maxWindow = Math.max(maxWindow, temp);
+            maxWindow = Math.max(maxWindow, temp);
         }
 
         return result + maxWindow;
