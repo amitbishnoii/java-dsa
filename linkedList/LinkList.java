@@ -1,0 +1,58 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class LinkList {
+    public static void main(String[] args) {
+        Node head = new Node(0);
+        Node a = head;
+
+        for (int i = 1; i < 11; i++) {
+            a.next = new Node(i);
+            a = a.next;
+        }
+
+        Node temp = head;
+
+        System.out.println("before insertion");
+        while (temp.next != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+        
+        // insert at start
+        // Node newNode = new Node(99);
+        // newNode.next = head;
+        // head = newNode;
+        
+        // Node temp2 = head;
+        
+        // System.out.println("after insertion");
+        // while (temp2.next != null) {
+        //     System.out.println(temp2.data);
+        //     temp2 = temp2.next;
+        // }
+
+        // insert at end
+        Node newNode1 = new Node(-1);
+        Node temp1 = head;
+        while (temp1.next != null) {
+            temp1 = temp1.next;
+        }
+        temp1.next = newNode1;
+
+        Node temp2 = head;
+        
+        System.out.println("after insertion at end");
+        while (temp2 != null) {
+            System.out.println(temp2.data);
+            temp2 = temp2.next;
+        }
+    }
+}
