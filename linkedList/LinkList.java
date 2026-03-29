@@ -15,8 +15,8 @@ public class LinkList {
 
         // System.out.println("before insertion");
         // while (temp.next != null) {
-        //     System.out.println(temp.data);
-        //     temp = temp.next;
+        // System.out.println(temp.data);
+        // temp = temp.next;
         // }
 
         // insert at start
@@ -36,7 +36,7 @@ public class LinkList {
         // Node newNode1 = new Node(-1);
         // Node temp1 = head;
         // while (temp1.next != null) {
-        //     temp1 = temp1.next;
+        // temp1 = temp1.next;
         // }
         // temp1.next = newNode1;
 
@@ -44,11 +44,26 @@ public class LinkList {
 
         // System.out.println("after insertion at end");
         // while (temp2 != null) {
-        //     System.out.println(temp2.data);
-        //     temp2 = temp2.next;
+        // System.out.println(temp2.data);
+        // temp2 = temp2.next;
         // }
 
         // insert at 2nd position
+
+        // Node temp = head;
+        // Node newNode = new Node(19);
+
+        // System.out.println("after inserting at 2nd");
+
+        // newNode.next = temp.next;
+        // temp.next = newNode;
+
+        // while (temp.next != null) {
+        // System.out.println(temp.data);
+        // temp = temp.next;
+        // }
+
+        // insert at Kth position
         Node head = new Node(0);
         Node a = head;
 
@@ -57,17 +72,23 @@ public class LinkList {
             a = a.next;
         }
 
+        Node newNode = new Node(123);
+        int k = 4;
+
         Node temp = head;
-        Node newNode = new Node(19);
-
-        System.out.println("after inserting at 2nd");
-
+        int count = 0;
+        while (count < k - 1) {
+            temp = temp.next;
+            count++;
+        }
         newNode.next = temp.next;
         temp.next = newNode;
 
-        while (temp.next != null) {
-            System.out.println(temp.data);
-            temp = temp.next;
+        Node temp1 = head;
+
+        while (temp1.next != null) {
+            System.out.println(temp1.data);
+            temp1 = temp1.next;
         }
     }
 }
