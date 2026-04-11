@@ -27,4 +27,28 @@ public class LeetCode_1721 {
 
         return head;
     }
+
+    static ListNode swapListNode(ListNode head, int k) {
+        // sol-2
+
+        ListNode fast = head;
+        ListNode slow = head;
+
+        for (int i = 1; i < k; i++) {
+            fast = fast.next;
+        }
+
+        ListNode temp = fast;
+
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        int temp1 = temp.val;
+        temp.val = slow.val;
+        slow.val = temp1;
+
+        return head;
+    }
 }
